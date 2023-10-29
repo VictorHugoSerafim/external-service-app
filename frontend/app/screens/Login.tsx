@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite"
 import React, { FC } from "react"
-import { Alert, Image, ImageStyle, TextStyle, View, ViewStyle } from "react-native"
+import { Alert, Image, ImageStyle, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
 import {
   Button,
   Icon,
@@ -25,6 +25,18 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
     throw new Error("Function not implemented.")
   }
 
+  function handleForgotPassword(event: GestureResponderEvent): void {
+    throw new Error("Function not implemented.")
+  }
+
+  function setNome(value: string): void {
+    throw new Error("Function not implemented.")
+  }
+
+  function setSenha(value: string): void {
+    throw new Error("Function not implemented.")
+  }
+
   return (
     <View style={$container}>
       <View style={$topContainer}>
@@ -32,32 +44,52 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
       </View>
 
       <View style={[$bottomContainer, $bottomContainerInsets]}>
+        
       <TextField
-        onChangeText={(value) => setInput(value)}
+        onChangeText={(value) => setNome(value)}
         LabelTextProps={{ style: { color: "black" } }}
         placeholder="Nome"
         placeholderTxOptions={{ name: "John" }}
         style={{ backgroundColor: "lightgray" }}
-        containerStyle={{ backgroundColor: "white" }}
+        containerStyle={[{ backgroundColor: "white" }, { marginBottom: 24 }]}
         inputWrapperStyle={{ backgroundColor: "lightgray" }}
       />
+
       <TextField
-        onChangeText={(value) => setInput(value)}
+        onChangeText={(value) => setSenha(value)}
         LabelTextProps={{ style: { color: "black" } }}
         placeholder="Senha"
-        placeholderTxOptions={{ name: "John" }}
         style={{ backgroundColor: "lightgray" }}
-        containerStyle={{ backgroundColor: "white" }}
+        containerStyle={[{ backgroundColor: "white" }, { marginBottom: 53 }]}
         inputWrapperStyle={{ backgroundColor: "lightgray" }}
+        RightAccessory={() => (
+          <TouchableOpacity
+          onPress={() => Alert.alert("Olha lá em!")}
+          style={{
+            paddingRight: 8,
+            marginTop: 4,
+          }}
+        >
+          <View>
+            <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold'}}> Ver </Text>
+          </View>
+        </TouchableOpacity>
+        )}
       />
+
       <Button
         text="Entrar"
         onPress={() => Alert.alert("aaiiinn!!")}
-        style={[{ paddingVertical: 15 }, { backgroundColor: "#232938" }, { borderRadius: 30 }]}
+        style={[{ paddingVertical: 15 }, { backgroundColor: "#232938" }, { borderRadius: 30 }, { marginBottom: 16 }]}
         pressedStyle={[{ backgroundColor: "white" }, { borderRadius: 30 }]}
         textStyle={[{ fontSize: 18 }, { color: "white" }]}
         pressedTextStyle={[{ fontSize: 18 }, { color: "#232938" }]}
       />
+
+      <Text style={{ textAlign: 'center', color: 'black' }} onPress={() => Alert.alert("iiii não lembra a senha kkkkk bobão!")}>
+        Esqueceu sua senha?
+      </Text>
+
       </View>
     </View>
   )
@@ -82,11 +114,10 @@ const $bottomContainer: ViewStyle = {
   flexGrow: 0,
   flexBasis: "50%",
   backgroundColor: colors.palette.neutral100,
-  borderTopLeftRadius: 16,
-  borderTopRightRadius: 16,
   paddingHorizontal: spacing.lg,
-  justifyContent: "space-evenly",
+  justifyContent: "flex-start",
 }
+
 const $welcomeLogo: ImageStyle = {
   height: 88,
   width: "100%",
