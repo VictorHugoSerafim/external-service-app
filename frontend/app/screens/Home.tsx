@@ -128,7 +128,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
               style={{ backgroundColor: "white" }} 
         />
     </View>
-    <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: "white", height: 70, borderTopWidth: 2, borderColor: "999999" }}>
+    <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: "white", height: 70, borderTopWidth: 2, borderColor: "#999999" }}>
         <Button style={[{ width: 103, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
               pressedStyle={[{ backgroundColor: "black" }, { borderRadius: 0 }]}
               textStyle={[{ fontSize: 15 }, { color: "black" }]}
