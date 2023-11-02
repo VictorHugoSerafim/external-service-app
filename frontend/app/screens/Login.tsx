@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite"
-import React, { FC } from "react"
+import React, { FC, useState } from "react"
 import { Alert, Image, ImageStyle, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
 import {
   Button,
@@ -11,7 +11,6 @@ import { isRTL } from "../i18n"
 import { colors, spacing } from "../theme"
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
 import { AppStackScreenProps } from "app/navigators/AppNavigator"
-
 const welcomeLogo = require("../../assets/images/FD-logo.jpg")
 
 interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
@@ -20,6 +19,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
 ) {
 
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])
+  const [mostrarSenha, setMostrarSenha] = useState(true)
 
   function setInput(value: string): void {
     throw new Error("Function not implemented.")
@@ -30,11 +30,11 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
   }
 
   function setNome(value: string): void {
-    throw new Error("Function not implemented.")
+    
   }
 
   function setSenha(value: string): void {
-    throw new Error("Function not implemented.")
+
   }
 
   return (
@@ -58,20 +58,21 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
       <TextField
         onChangeText={(value) => setSenha(value)}
         LabelTextProps={{ style: { color: "black" } }}
+        secureTextEntry={mostrarSenha}
         placeholder="Senha"
         style={{ backgroundColor: "lightgray" }}
         containerStyle={[{ backgroundColor: "white" }, { marginBottom: 53 }]}
         inputWrapperStyle={{ backgroundColor: "lightgray" }}
         RightAccessory={() => (
           <TouchableOpacity
-          onPress={() => Alert.alert("Olha lá em!")}
+          onPress={() => setMostrarSenha(!mostrarSenha)}
           style={{
             paddingRight: 8,
             marginTop: 4,
           }}
         >
           <View>
-            <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold'}}> Ver </Text>
+            <Text  style={{ textAlign: 'center', color: 'black', fontWeight: 'bold'}}>  {mostrarSenha ? 'Mostrar' : 'Ocultar'}</Text>
           </View>
         </TouchableOpacity>
         )}
