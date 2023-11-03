@@ -49,10 +49,9 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         onChangeText={(value) => setNome(value)}
         LabelTextProps={{ style: { color: "black" } }}
         placeholder="Nome"
-        placeholderTxOptions={{ name: "John" }}
-        style={{ backgroundColor: "lightgray" }}
+        style={{ backgroundColor: "white" }}
         containerStyle={[{ backgroundColor: "white" }, { marginBottom: 24 }]}
-        inputWrapperStyle={{ backgroundColor: "lightgray" }}
+        inputWrapperStyle={{ backgroundColor: "white" }}
       />
 
       <TextField
@@ -60,9 +59,9 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         LabelTextProps={{ style: { color: "black" } }}
         secureTextEntry={mostrarSenha}
         placeholder="Senha"
-        style={{ backgroundColor: "lightgray" }}
+        style={{ backgroundColor: "white" }}
         containerStyle={[{ backgroundColor: "white" }, { marginBottom: 53 }]}
-        inputWrapperStyle={{ backgroundColor: "lightgray" }}
+        inputWrapperStyle={{ backgroundColor: "white" }}
         RightAccessory={() => (
           <TouchableOpacity
           onPress={() => setMostrarSenha(!mostrarSenha)}
