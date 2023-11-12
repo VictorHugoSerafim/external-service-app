@@ -1,3 +1,3 @@
-export * from "./MinhasOrdens"
+export * from "./OrdemServico"
 export * from "./ErrorScreen/ErrorBoundary"
 // export other screens here
