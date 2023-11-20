@@ -50,7 +50,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
     <>
       <View style={$container}>
 
-        <View style={{ marginTop: 80, marginBottom: 24, marginLeft: 24, marginRight: 24 }}>
+        <View style={{ marginTop: 40, marginBottom: 24, marginLeft: 24, marginRight: 24 }}>
           <TextField
             onChangeText={(value) => setInput(value)}
             LabelTextProps={{ style: { color: "black" } }}

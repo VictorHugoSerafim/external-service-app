@@ -78,7 +78,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
               <View>
                 <Text
                   style={{
-                    textAlign: 'center',
+                    marginTop: 4,
                     color: 'black',
                     fontWeight: 'bold',
                   }}
