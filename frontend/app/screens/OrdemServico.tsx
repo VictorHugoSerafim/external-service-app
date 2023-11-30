@@ -5,6 +5,7 @@ import {
   Image,
   ImageStyle,
   ScrollView,
+  Dimensions,
   TextStyle,
   TouchableOpacity,
   View,
@@ -28,7 +29,9 @@ interface WelcomeScreenProps extends AppStackScreenProps<"OrdemServico"> {}
 
 export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScreen() {
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"]);
+  const { width, height } = Dimensions.get("window");
   const navigation = useNavigation()
+
   function setNome(value: string): void {
     throw new Error("Function not implemented.")
   }
@@ -47,12 +50,98 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
 
   return (
     <View style={$container}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: "white", height: heightPercentageToDP("10%"), borderTopWidth: 2, borderColor: "#999999" }}>
+        <Button
+          style={[
+            { width: widthPercentageToDP("25%"), height: heightPercentageToDP("8%") },
+            { backgroundColor: "white" },
+            { borderColor: "white", borderRadius: 0 },
+          ]}
+          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
+          textStyle={[
+            { fontSize: heightPercentageToDP("2%") },
+            { color: "black" },
+          ]}
+          pressedTextStyle={[
+            { fontSize: heightPercentageToDP("2%") },
+            { color: "white" },
+          ]}
+          onPress={() => navigation.navigate("Welcome")}
+        >
+          <Icon color="#232938" icon="menu" />
+        </Button>
+
+        <Button
+          style={[
+            { width: widthPercentageToDP("25%"), height: heightPercentageToDP("8%") },
+            { backgroundColor: "white" },
+            { borderColor: "white", borderRadius: 0 },
+          ]}
+          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
+          textStyle={[
+            { fontSize: heightPercentageToDP("2%") },
+            { color: "black" },
+          ]}
+          pressedTextStyle={[
+            { fontSize: heightPercentageToDP("2%") },
+            { color: "white" },
+          ]}
+          onPress={() => navigation.navigate("Minhasorden")}
+        >
+          <Icon color="#232938" icon="pin" />
+        </Button>
+
+        <Button
+          style={[
+            { width: widthPercentageToDP("25%"), height: heightPercentageToDP("8%") },
+            { backgroundColor: "white" },
+            { borderColor: "white", borderRadius: 0 },
+          ]}
+          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
+          textStyle={[
+            { fontSize: heightPercentageToDP("2%") },
+            { color: "black" },
+          ]}
+          pressedTextStyle={[
+            { fontSize: heightPercentageToDP("2%") },
+            { color: "white" },
+          ]}
+          onPress={() => navigation.navigate("OrdemServico")}
+        >
+          <Icon color="#232938" icon="components" />
+        </Button>
+
+        <Button
+          style={[
+            { width: widthPercentageToDP("25%"), height: heightPercentageToDP("8%") },
+            { backgroundColor: "white" },
+            { borderColor: "white", borderRadius: 0 },
+          ]}
+          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
+          textStyle={[
+            { fontSize: heightPercentageToDP("2%") },
+            { color: "black" },
+          ]}
+          pressedTextStyle={[
+            { fontSize: heightPercentageToDP("2%") },
+            { color: "white" },
+          ]}
+          onPress={() => navigation.navigate("Historico")}
+        >
+          <Icon color="#232938" icon="view" />
+        </Button>
+      </View>
+
+      <View>
+        <Text text="Ordem de Serviço" style={[{ fontSize: 20, marginTop: height * 0.02, marginLeft: width * 0.3, marginRight: width * 0.05}]} />
+      </View>
+
       <ScrollView>
       <View style={[$bottomContainer, $bottomContainerInsets]}>
       
         <View>
         
-        <View style={{ marginTop: heightPercentageToDP("8%"), marginBottom: heightPercentageToDP("1%") }}>
+        <View style={{marginTop: height * 0.05, marginBottom: heightPercentageToDP("1%") }}>
             <TextField
               onChangeText={(value) => setInput(value)}
               LabelTextProps={{ style: { color: "black" } }}
@@ -69,7 +158,7 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
                   }}
                 >
                   <View>
-                    <Icon icon="view" />
+                    <Icon icon="lupa" />
                   </View>
                 </TouchableOpacity>
               )}
@@ -147,9 +236,9 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
                 marginTop: 8,
               }}
             >
-              <View>
+              {/* <View>
                 <Icon icon="view" />
-              </View>
+              </View> */}
             </TouchableOpacity>
             )}
           />
@@ -193,7 +282,7 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
           <View style={{ flex: 1, marginRight: widthPercentageToDP("2%") }}>
             <Button
               text="Pegar"
-              onPress={() => Alert.alert("aaiiinn!!")}
+              onPress={() => navigation.navigate("Minhasorden")}
               style={[
                 { paddingVertical: heightPercentageToDP("2%") },
                 { backgroundColor: "#556B2F" },
@@ -218,7 +307,7 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
           <View style={{ flex: 1 }}>
             <Button
               text="Devolver"
-              onPress={() => Alert.alert("aaiiinn!!")}
+              onPress={() => navigation.navigate("Welcome")}
               style={[
                 { paddingVertical: heightPercentageToDP("2%") },
                 { backgroundColor: "#FFBF00" },
@@ -248,87 +337,7 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
       
       </ScrollView>
       
-      <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: "white", height: heightPercentageToDP("10%"), borderTopWidth: 2, borderColor: "#999999" }}>
-        <Button
-          style={[
-            { width: widthPercentageToDP("25%"), height: heightPercentageToDP("8%") },
-            { backgroundColor: "white" },
-            { borderColor: "white", borderRadius: 0 },
-          ]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[
-            { fontSize: heightPercentageToDP("2%") },
-            { color: "black" },
-          ]}
-          pressedTextStyle={[
-            { fontSize: heightPercentageToDP("2%") },
-            { color: "white" },
-          ]}
-          onPress={() => navigation.navigate("Welcome")}
-        >
-          <Icon color="#232938" icon="menu" />
-        </Button>
-
-        <Button
-          style={[
-            { width: widthPercentageToDP("25%"), height: heightPercentageToDP("8%") },
-            { backgroundColor: "white" },
-            { borderColor: "white", borderRadius: 0 },
-          ]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[
-            { fontSize: heightPercentageToDP("2%") },
-            { color: "black" },
-          ]}
-          pressedTextStyle={[
-            { fontSize: heightPercentageToDP("2%") },
-            { color: "white" },
-          ]}
-          onPress={() => navigation.navigate("Minhasorden")}
-        >
-          <Icon color="#232938" icon="community" />
-        </Button>
-
-        <Button
-          style={[
-            { width: widthPercentageToDP("25%"), height: heightPercentageToDP("8%") },
-            { backgroundColor: "white" },
-            { borderColor: "white", borderRadius: 0 },
-          ]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[
-            { fontSize: heightPercentageToDP("2%") },
-            { color: "black" },
-          ]}
-          pressedTextStyle={[
-            { fontSize: heightPercentageToDP("2%") },
-            { color: "white" },
-          ]}
-          onPress={() => navigation.navigate("OrdemServico")}
-        >
-          <Icon color="#232938" icon="components" />
-        </Button>
-
-        <Button
-          style={[
-            { width: widthPercentageToDP("25%"), height: heightPercentageToDP("8%") },
-            { backgroundColor: "white" },
-            { borderColor: "white", borderRadius: 0 },
-          ]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[
-            { fontSize: heightPercentageToDP("2%") },
-            { color: "black" },
-          ]}
-          pressedTextStyle={[
-            { fontSize: heightPercentageToDP("2%") },
-            { color: "white" },
-          ]}
-          onPress={() => navigation.navigate("Historico")}
-        >
-          <Icon color="#232938" icon="view" />
-        </Button>
-      </View>
+      
     </View>
   );
 });

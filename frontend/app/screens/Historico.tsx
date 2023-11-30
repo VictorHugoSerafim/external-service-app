@@ -7,7 +7,8 @@ import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle";
 import { AppStackScreenProps } from "app/navigators";
 import { useNavigation } from "@react-navigation/native"
 
-const welcomeLogo = require("../../assets/images/FD-logo.jpg");
+// const welcomeLogo = require("../../assets/images/FD-logo.jpg");
+const welcomeLogo = require("../../assets/images/barretech-logo.png");
 
 interface WelcomeScreenProps extends AppStackScreenProps<"Historico"> {}
 
@@ -17,6 +18,7 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
   const { width: screenWidth, height: screenHeight } = useWindowDimensions();
   const buttonWidthPercentage = 0.25;
   const bottomBarHeightPercentage = 0.1; // Porcentagem da altura da tela para a barra inferior
+  const { width, height } = Dimensions.get("window");
   const navigation = useNavigation()
   
   function setInput(value: any) {
@@ -24,14 +26,14 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
 
   const renderCard = (title: string, subtitle: string) => (
     <View style={$rowContainer}>
-      <TouchableWithoutFeedback onPress={() => Alert.alert('Imagem clicada!')}>
+      <TouchableWithoutFeedback>
         <Image style={$card} source={welcomeLogo} resizeMode="contain" />
       </TouchableWithoutFeedback>
       <View style={{ marginLeft: 10 }}>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 1 clicado!')}>
+        <TouchableWithoutFeedback>
           <Text text={title} preset="bold" style={{ fontSize: 16 }} />
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 2 clicado!')}>
+        <TouchableWithoutFeedback>
           <Text text={subtitle} style={{ fontSize: 8 }} />
         </TouchableWithoutFeedback>
       </View>
@@ -40,9 +42,8 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
         pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
         textStyle={$buttonTextStyle}
         pressedTextStyle={$buttonPressedTextStyle}
-        onPress={() => Alert.alert("teste!")}
       >
-        <Icon color="#232938" icon="caretRight" />
+        <Icon color="#232938" icon="view" />
       </Button>
     </View>
   );
@@ -50,45 +51,7 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
   return (
     <>
       <View style={$container}>
-
-        <View style={{ marginTop: 40, marginBottom: 24, marginLeft: 24, marginRight: 24 }}>
-          <TextField
-            onChangeText={(value) => setInput(value)}
-            LabelTextProps={{ style: { color: "black" } }}
-            placeholder=""
-            style={{ backgroundColor: "white" }}
-            containerStyle={[{ backgroundColor: "transparent" }]}
-            inputWrapperStyle={{ backgroundColor: "white" }}
-            RightAccessory={() => (
-              <TouchableOpacity
-                onPress={() => Alert.alert("Olha lá em!")}
-                style={{
-                  paddingRight: 8,
-                  marginTop: 8,
-                }}
-              >
-                <View>
-                  <Icon icon="view" />
-                </View>
-              </TouchableOpacity>
-            )} />
-        </View>
-        <ScrollView style={[$bottomContainer, $bottomContainerInsets]}>
-          {renderCard("Opção 1", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 2", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 3", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 4", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 5", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 6", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 7", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 8", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 9", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 10", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 11", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Opção 12", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-
-        </ScrollView>
-      </View><View style={[$bottomBar, { height: screenHeight * bottomBarHeightPercentage }]}>
+      <View style={[$bottomBar, { height: screenHeight * bottomBarHeightPercentage }]}>
       <Button
             style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
             pressedStyle={$bottomBarButtonPressed}
@@ -105,7 +68,7 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
             pressedTextStyle={$bottomBarButtonTextPressed}
             onPress={() => navigation.navigate("Minhasorden")}
           >
-            <Icon color="#232938" icon="community" />
+            <Icon color="#232938" icon="pin" />
           </Button>
           <Button
             style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
@@ -125,7 +88,51 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
           >
             <Icon color="#232938" icon="view" />
           </Button>
-      </View></>
+      </View>
+
+      <View>
+        <Text text="Ordens Finalizadas" style={[{ fontSize: 20, marginTop: height * 0.02, marginLeft: width * 0.3, marginRight: width * 0.05}]} />
+      </View>
+
+        <View style={{ marginTop: height * 0.05, marginBottom: 24, marginLeft: 24, marginRight: 24 }}>
+          <TextField
+            onChangeText={(value) => setInput(value)}
+            LabelTextProps={{ style: { color: "black" } }}
+            placeholder=""
+            style={{ backgroundColor: "white" }}
+            containerStyle={[{ backgroundColor: "transparent" }]}
+            inputWrapperStyle={{ backgroundColor: "white" }}
+            RightAccessory={() => (
+              <TouchableOpacity
+                style={{
+                  paddingRight: 8,
+                  marginTop: 8,
+                }}
+              >
+                <View>
+                  <Icon icon="lupa" />
+                </View>
+              </TouchableOpacity>
+            )} />
+        </View>
+        <ScrollView style={[$bottomContainer, $bottomContainerInsets]}>
+          {renderCard("Chamado 1", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 2", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 3", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 4", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 5", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 6", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 7", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 8", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 9", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 10", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 11", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado 12", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+
+        </ScrollView>
+      </View>
+      
+      </>
   
   );
 });

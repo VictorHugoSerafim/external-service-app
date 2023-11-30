@@ -30,7 +30,8 @@ import { TouchableOpacity } from "react-native/Libraries/Components/Touchable/To
 import { useNavigation } from "@react-navigation/native"
 
 
-const welcomeLogo = require("../../assets/images/FD-logo.jpg");
+// const welcomeLogo = require("../../assets/images/FD-logo.jpg");
+const welcomeLogo = require("../../assets/images/barretech-logo.png");
 
 interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
 
@@ -47,36 +48,8 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
       <View style={$welcomeLogoContainer}>
           <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
         </View>
-      <ScrollView>
-        <View style={[$bottomContainer, $bottomContainerInsets]}>
-          {/* Usando um loop para evitar repetição de código */}
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => (
-            <View key={index} style={$rowContainer}>
-              <TouchableWithoutFeedback onPress={() => Alert.alert(`Imagem ${index} clicada!`)}>
-                <Image style={$card} source={welcomeLogo} resizeMode="contain" />
-              </TouchableWithoutFeedback>
-              <View style={$textContainer}>
-                <TouchableWithoutFeedback onPress={() => Alert.alert(`Texto 1 clicado!`)}>
-                  <Text text={`Opção ${index}`} preset="bold" style={$textStyle} />
-                </TouchableWithoutFeedback>
-                <TouchableWithoutFeedback onPress={() => Alert.alert(`Texto 2 clicado!`)}>
-                  <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit." style={[$textStyle, { fontSize: 8 }]} />
-                </TouchableWithoutFeedback>
-              </View>
-              <Button
-                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
-                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
-                textStyle={$buttonTextStyle}
-                pressedTextStyle={$buttonPressedTextStyle}
-                onPress={() => Alert.alert("teste!")}
-              >
-                <Icon color="#232938" icon="caretRight" />
-              </Button>
-            </View>
-          ))}
-        </View>
-      </ScrollView>
-      <View style={[$bottomBar, { height: screenHeight * bottomBarHeightPercentage }]}>
+
+        <View style={[$bottomBar, { height: screenHeight * bottomBarHeightPercentage }]}>
           <Button
             style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
             pressedStyle={$bottomBarButtonPressed}
@@ -93,7 +66,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             pressedTextStyle={$bottomBarButtonTextPressed}
             onPress={() => navigation.navigate("Minhasorden")}
           >
-            <Icon color="#232938" icon="community" />
+            <Icon color="#232938" icon="pin" />
           </Button>
           <Button
             style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
@@ -114,6 +87,37 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             <Icon color="#232938" icon="view" />
           </Button>
         </View>
+
+      <ScrollView>
+        <View style={[$bottomContainer, $bottomContainerInsets]}>
+          {/* Usando um loop para evitar repetição de código */}
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => (
+            <View key={index} style={$rowContainer}>
+              <TouchableWithoutFeedback>
+                <Image style={$card} source={welcomeLogo} resizeMode="contain" />
+              </TouchableWithoutFeedback>
+              <View style={$textContainer}>
+                <TouchableWithoutFeedback>
+                  <Text text={`Chamado ${index}`} preset="bold" style={$textStyle} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                  <Text text="Visita técnica" style={[$textStyle, { fontSize: 8 }]} />
+                </TouchableWithoutFeedback>
+              </View>
+              <Button
+                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
+                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
+                textStyle={$buttonTextStyle}
+                pressedTextStyle={$buttonPressedTextStyle}
+                onPress={() => navigation.navigate("OrdemServico")}
+              >
+                <Icon color="#232938" icon="caretRight" />
+              </Button>
+            </View>
+          ))}
+        </View>
+      </ScrollView>
+
     </SafeAreaView>
   );
 });

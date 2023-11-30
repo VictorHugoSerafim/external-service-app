@@ -8,7 +8,8 @@ import MapView, { Marker } from 'react-native-maps';
 import { spacing } from "app/theme";
 import { useNavigation } from "@react-navigation/native"
 
-const welcomeLogo = require("../../assets/images/FD-logo.jpg");
+// const welcomeLogo = require("../../assets/images/FD-logo.jpg");
+const welcomeLogo = require("../../assets/images/barretech-logo.png");
 
 interface WelcomeScreenProps extends AppStackScreenProps<"Minhasorden"> {}
 
@@ -23,7 +24,52 @@ export const MinhasOrdens: FC<WelcomeScreenProps> = observer(function WelcomeScr
 
   return (
     <View style={$container}>
-      <View style={{ marginTop: height * 0.1, marginBottom: height * 0.03, marginLeft: width * 0.05, marginRight: width * 0.05 }}>
+
+<View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: "white", height: height * 0.1, borderTopWidth: 2, borderColor: "#999999" }}>
+        <Button
+          style={[{ width: width * 0.25, height: height * 0.1 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
+          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
+          textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
+          pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
+          onPress={() => navigation.navigate("Welcome")}
+          >
+          <Icon color="#232938" icon="menu" />
+        </Button>
+        <Button
+          style={[{ width: width * 0.25, height: height * 0.1 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
+          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
+          textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
+          pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
+          onPress={() => navigation.navigate("Minhasorden")}
+          >
+          <Icon color="#232938" icon="pin" />
+        </Button>
+        <Button
+          style={[{ width: width * 0.25, height: height * 0.1 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
+          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
+          textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
+          pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
+          onPress={() => navigation.navigate("OrdemServico")}
+          >
+          <Icon color="#232938" icon="components" />
+        </Button>
+        <Button
+          style={[{ width: width * 0.25, height: height * 0.1 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
+          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
+          textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
+          pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
+          onPress={() => navigation.navigate("Historico")}
+          >
+          <Icon color="#232938" icon="view" />
+        </Button>
+        
+      </View>
+
+      <View>
+        <Text text="Meus Chamados" style={[{ fontSize: 20, marginTop: height * 0.02, marginLeft: width * 0.3, marginRight: width * 0.05}]} />
+      </View>
+
+      <View style={{ marginTop: height * 0.05, marginBottom: height * 0.03, marginLeft: width * 0.05, marginRight: width * 0.05 }}>
         <TextField
           onChangeText={(value) => setInput(value)}
           LabelTextProps={{ style: { color: "black" } }}
@@ -40,7 +86,7 @@ export const MinhasOrdens: FC<WelcomeScreenProps> = observer(function WelcomeScr
               }}
             >
               <View>
-                <Icon icon="view" />
+                <Icon icon="lupa" />
               </View>
             </TouchableOpacity>
           )}
@@ -69,161 +115,81 @@ export const MinhasOrdens: FC<WelcomeScreenProps> = observer(function WelcomeScr
         <ScrollView style={{ flex: 1 }} contentContainerStyle={$scrollViewContent}>
 
              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Imagem clicada!')}>
+        <TouchableWithoutFeedback>
           <Image style={$card} source={welcomeLogo} resizeMode="contain" />
         </TouchableWithoutFeedback>
         <View style={{ marginLeft: 10 }}>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 1 clicado!')}>
-            <Text text="Opção 1" preset="bold" style={{ fontSize: 16 }} />
+          <TouchableWithoutFeedback>
+            <Text text="Chamado 1" preset="bold" style={{ fontSize: 16 }} />
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 2 clicado!')}>
+          <TouchableWithoutFeedback>
             <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit." style={{ fontSize: 8 }} />
           </TouchableWithoutFeedback>
         </View>
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => navigation.navigate("OrdemServico")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16  }}>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Imagem clicada!')}>
+        <TouchableWithoutFeedback>
           <Image style={$card} source={welcomeLogo} resizeMode="contain" />
         </TouchableWithoutFeedback>
         <View style={{ marginLeft: 10 }}>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 1 clicado!')}>
-            <Text text="Opção 2" preset="bold" style={{ fontSize: 16 }} />
+          <TouchableWithoutFeedback>
+            <Text text="Chamado 2" preset="bold" style={{ fontSize: 16 }} />
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 2 clicado!')}>
+          <TouchableWithoutFeedback>
             <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit." style={{ fontSize: 8 }} />
           </TouchableWithoutFeedback>
         </View>
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => navigation.navigate("OrdemServico")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16  }}>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Imagem clicada!')}>
+        <TouchableWithoutFeedback>
           <Image style={$card} source={welcomeLogo} resizeMode="contain" />
         </TouchableWithoutFeedback>
         <View style={{ marginLeft: 10 }}>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 1 clicado!')}>
-            <Text text="Opção 3" preset="bold" style={{ fontSize: 16 }} />
+          <TouchableWithoutFeedback>
+            <Text text="Chamado 3" preset="bold" style={{ fontSize: 16 }} />
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 2 clicado!')}>
+          <TouchableWithoutFeedback>
             <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit." style={{ fontSize: 8 }} />
           </TouchableWithoutFeedback>
         </View>
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => navigation.navigate("OrdemServico")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16  }}>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Imagem clicada!')}>
+        <TouchableWithoutFeedback>
           <Image style={$card} source={welcomeLogo} resizeMode="contain" />
         </TouchableWithoutFeedback>
         <View style={{ marginLeft: 10 }}>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 1 clicado!')}>
-            <Text text="Opção 4" preset="bold" style={{ fontSize: 16 }} />
+          <TouchableWithoutFeedback>
+            <Text text="Chamado 4" preset="bold" style={{ fontSize: 16 }} />
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 2 clicado!')}>
+          <TouchableWithoutFeedback>
             <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit." style={{ fontSize: 8 }} />
           </TouchableWithoutFeedback>
         </View>
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
-          <Icon color="#232938" icon="caretRight" />
-        </Button>
-      </View>
-
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16  }}>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Imagem clicada!')}>
-          <Image style={$card} source={welcomeLogo} resizeMode="contain" />
-        </TouchableWithoutFeedback>
-        <View style={{ marginLeft: 10 }}>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 1 clicado!')}>
-            <Text text="Opção 5" preset="bold" style={{ fontSize: 16 }} />
-          </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 2 clicado!')}>
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit." style={{ fontSize: 8 }} />
-          </TouchableWithoutFeedback>
-        </View>
-        <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
-          <Icon color="#232938" icon="caretRight" />
-        </Button>
-      </View>
-
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16  }}>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Imagem clicada!')}>
-          <Image style={$card} source={welcomeLogo} resizeMode="contain" />
-        </TouchableWithoutFeedback>
-        <View style={{ marginLeft: 10 }}>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 1 clicado!')}>
-            <Text text="Opção 6" preset="bold" style={{ fontSize: 16 }} />
-          </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 2 clicado!')}>
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit." style={{ fontSize: 8 }} />
-          </TouchableWithoutFeedback>
-        </View>
-        <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
-          <Icon color="#232938" icon="caretRight" />
-        </Button>
-      </View>
-
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16  }}>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Imagem clicada!')}>
-          <Image style={$card} source={welcomeLogo} resizeMode="contain" />
-        </TouchableWithoutFeedback>
-        <View style={{ marginLeft: 10 }}>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 1 clicado!')}>
-            <Text text="Opção 7" preset="bold" style={{ fontSize: 16 }} />
-          </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 2 clicado!')}>
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit." style={{ fontSize: 8 }} />
-          </TouchableWithoutFeedback>
-        </View>
-        <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
-          <Icon color="#232938" icon="caretRight" />
-        </Button>
-      </View>
-
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16  }}>
-        <TouchableWithoutFeedback onPress={() => Alert.alert('Imagem clicada!')}>
-          <Image style={$card} source={welcomeLogo} resizeMode="contain" />
-        </TouchableWithoutFeedback>
-        <View style={{ marginLeft: 10 }}>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 1 clicado!')}>
-            <Text text="Opção 8" preset="bold" style={{ fontSize: 16 }} />
-          </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => Alert.alert('Texto 2 clicado!')}>
-            <Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit." style={{ fontSize: 8 }} />
-          </TouchableWithoutFeedback>
-        </View>
-        <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => navigation.navigate("OrdemServico")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
@@ -232,45 +198,7 @@ export const MinhasOrdens: FC<WelcomeScreenProps> = observer(function WelcomeScr
         </ScrollView>
       </View>
 
-      <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: "white", height: height * 0.1, borderTopWidth: 2, borderColor: "#999999" }}>
-        <Button
-          style={[{ width: width * 0.25, height: height * 0.1 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => navigation.navigate("Welcome")}
-          >
-          <Icon color="#232938" icon="menu" />
-        </Button>
-        <Button
-          style={[{ width: width * 0.25, height: height * 0.1 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => navigation.navigate("Minhasorden")}
-          >
-          <Icon color="#232938" icon="community" />
-        </Button>
-        <Button
-          style={[{ width: width * 0.25, height: height * 0.1 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => navigation.navigate("OrdemServico")}
-          >
-          <Icon color="#232938" icon="components" />
-        </Button>
-        <Button
-          style={[{ width: width * 0.25, height: height * 0.1 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
-          textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => navigation.navigate("Historico")}
-          >
-          <Icon color="#232938" icon="view" />
-        </Button>
-        
-      </View>
+
     </View>
   );
 });
