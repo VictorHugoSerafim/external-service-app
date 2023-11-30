@@ -13,28 +13,26 @@ import { colors, spacing } from "../theme"
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
 import { AppStackScreenProps } from "app/navigators"
 import UploadButton from "app/components/UploadButton"
+import { useNavigation } from "@react-navigation/native"
 
-interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
+interface WelcomeScreenProps extends AppStackScreenProps<"OrdemServico"> {}
 
-export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen(
+export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScreen(
 ) {
 
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])
+  const navigation = useNavigation()
 
   function setNome(value: string): void {
-    throw new Error("Function not implemented.")
   }
 
   function setCPF(value: string): void {
-    throw new Error("Function not implemented.")
   }
 
   function setEndereco(value: string): void {
-    throw new Error("Function not implemented.")
   }
 
   function setInput(value: string): void {
-    throw new Error("Function not implemented.")
   }
 
   return (
@@ -175,19 +173,19 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
           <Button style={[{ width: 103, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
                 pressedStyle={[{ backgroundColor: "black" }, { borderRadius: 0 }]}
                 textStyle={[{ fontSize: 15 }, { color: "black" }]}
-                pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("uuii!")}><Icon color="#232938" icon="menu" /></Button>
+                pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => navigation.navigate("Welcome")}><Icon color="#232938" icon="menu" /></Button>
           <Button style={[{ width: 103, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
                 pressedStyle={[{ backgroundColor: "black" }, { borderRadius: 0 }]}
                 textStyle={[{ fontSize: 15 }, { color: "black" }]}
-                pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("truco mareco!")}><Icon color="#232938" icon="community" /></Button>
+                pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => navigation.navigate("Historico")}><Icon color="#232938" icon="community" /></Button>
           <Button style={[{ width: 103, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
                 pressedStyle={[{ backgroundColor: "black" }, { borderRadius: 0 }]}
                 textStyle={[{ fontSize: 15 }, { color: "black" }]}
-                pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("cavalo!!")}><Icon color="#232938" icon="components" /></Button>
+                pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => navigation.navigate("Minhasorden")}><Icon color="#232938" icon="components" /></Button>
           <Button style={[{ width: 103, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
                 pressedStyle={[{ backgroundColor: "black" }, { borderRadius: 0 }]}
                 textStyle={[{ fontSize: 15 }, { color: "black" }]}
-                pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("que isso meu filho, calma!")}><Icon color="#232938" icon="view" /></Button>
+                pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => navigation.navigate("OrdemServico")}><Icon color="#232938" icon="view" /></Button>
       </View>
     </View>
   )

@@ -18,16 +18,18 @@ import {
 import { isRTL } from "../i18n";
 import { colors, spacing } from "../theme";
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle";
-import { AppStackScreenProps } from "app/navigators/AppNavigator";
+import { AppStackScreenProps, navigation } from "app/navigators/AppNavigator";
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
+import { useNavigation } from "@react-navigation/native"
 
 const welcomeLogo = require("../../assets/images/FD-logo.jpg");
 
-interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
+interface WelcomeScreenProps extends AppStackScreenProps<"Login"> {}
 
-export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen() {
+export const Login: FC<WelcomeScreenProps> = observer(function WelcomeScreen() {
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"]);
-  const [mostrarSenha, setMostrarSenha] = useState(true);
+  const [mostrarSenha, setMostrarSenha] = useState(false);
+  const navigation = useNavigation()
 
   function setNome(value: string): void {
     // Implement your logic here
@@ -92,7 +94,6 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
 
         <Button
           text="Entrar"
-          onPress={() => Alert.alert("aaiiinn!!")}
           style={[
             { paddingVertical: heightPercentageToDP("1.5%") },
             { backgroundColor: "#232938" },
@@ -111,6 +112,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             { fontSize: heightPercentageToDP("1.8%") },
             { color: "#232938" },
           ]}
+          onPress={() => navigation.navigate("Welcome")}
         />
 
         <Text

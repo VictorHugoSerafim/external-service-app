@@ -27,6 +27,8 @@ import { colors, spacing } from "../theme";
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle";
 import { AppStackScreenProps } from "app/navigators";
 import { TouchableOpacity } from "react-native/Libraries/Components/Touchable/TouchableOpacity";
+import { useNavigation } from "@react-navigation/native"
+
 
 const welcomeLogo = require("../../assets/images/FD-logo.jpg");
 
@@ -39,7 +41,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
   const { width: screenWidth, height: screenHeight } = useWindowDimensions();
   const buttonWidthPercentage = 0.25;
   const bottomBarHeightPercentage = 0.1; // Porcentagem da altura da tela para a barra inferior
-
+  const navigation = useNavigation()
   return (
     <SafeAreaView style={$container}>
       <View style={$welcomeLogoContainer}>
@@ -66,7 +68,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
                 pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
                 textStyle={$buttonTextStyle}
                 pressedTextStyle={$buttonPressedTextStyle}
-                onPress={() => Alert.alert("uuii!")}
+                onPress={() => Alert.alert("teste!")}
               >
                 <Icon color="#232938" icon="caretRight" />
               </Button>
@@ -80,7 +82,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             pressedStyle={$bottomBarButtonPressed}
             textStyle={$bottomBarButtonText}
             pressedTextStyle={$bottomBarButtonTextPressed}
-            onPress={() => Alert.alert("uuii!")}
+            onPress={() => navigation.navigate("Welcome")}
           >
             <Icon color="#232938" icon="menu" />
           </Button>
@@ -89,7 +91,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             pressedStyle={$bottomBarButtonPressed}
             textStyle={$bottomBarButtonText}
             pressedTextStyle={$bottomBarButtonTextPressed}
-            onPress={() => Alert.alert("truco mareco!")}
+            onPress={() => navigation.navigate("Historico")}
           >
             <Icon color="#232938" icon="community" />
           </Button>
@@ -98,7 +100,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             pressedStyle={$bottomBarButtonPressed}
             textStyle={$bottomBarButtonText}
             pressedTextStyle={$bottomBarButtonTextPressed}
-            onPress={() => Alert.alert("cavalo!!")}
+            onPress={() => navigation.navigate("Minhasorden")}
           >
             <Icon color="#232938" icon="components" />
           </Button>
@@ -107,7 +109,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             pressedStyle={$bottomBarButtonPressed}
             textStyle={$bottomBarButtonText}
             pressedTextStyle={$bottomBarButtonTextPressed}
-            onPress={() => Alert.alert("que isso meu filho, calma!")}
+            onPress={() => navigation.navigate("OrdemServico")}
           >
             <Icon color="#232938" icon="view" />
           </Button>

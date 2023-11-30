@@ -6,14 +6,16 @@ import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle";
 import { AppStackScreenProps } from "app/navigators";
 import MapView, { Marker } from 'react-native-maps';
 import { spacing } from "app/theme";
+import { useNavigation } from "@react-navigation/native"
 
 const welcomeLogo = require("../../assets/images/FD-logo.jpg");
 
-interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
+interface WelcomeScreenProps extends AppStackScreenProps<"Minhasorden"> {}
 
-export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen() {
+export const MinhasOrdens: FC<WelcomeScreenProps> = observer(function WelcomeScreen() {
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"]);
   const { width, height } = Dimensions.get("window");
+  const navigation = useNavigation()
 
   function setInput(value: any): void {
     // Implemente sua lógica aqui
@@ -81,7 +83,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("uuii!")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
@@ -101,7 +103,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("uuii!")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
@@ -121,7 +123,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("uuii!")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
@@ -141,7 +143,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("uuii!")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
@@ -161,7 +163,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("uuii!")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
@@ -181,7 +183,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("uuii!")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
@@ -201,7 +203,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("uuii!")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
@@ -221,7 +223,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Button style={[{ width: 50, height: 70 }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: 15 }, { color: "black" }]}
-          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("uuii!")}>
+          pressedTextStyle={[{ fontSize: 15 }, { color: "white" }]} onPress={() => Alert.alert("teste")}>
           <Icon color="#232938" icon="caretRight" />
         </Button>
       </View>
@@ -236,8 +238,8 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
           pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => Alert.alert("truco mareco!")}
-        >
+          onPress={() => navigation.navigate("Welcome")}
+          >
           <Icon color="#232938" icon="menu" />
         </Button>
         <Button
@@ -245,8 +247,8 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
           pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => Alert.alert("uuii!")}
-        >
+          onPress={() => navigation.navigate("Historico")}
+          >
           <Icon color="#232938" icon="community" />
         </Button>
         <Button
@@ -254,8 +256,8 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
           pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => Alert.alert("cavalo!!")}
-        >
+          onPress={() => navigation.navigate("Minhasorden")}
+          >
           <Icon color="#232938" icon="components" />
         </Button>
         <Button
@@ -263,8 +265,8 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
           pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => Alert.alert("que isso meu filho, calma!")}
-        >
+          onPress={() => navigation.navigate("OrdemServico")}
+          >
           <Icon color="#232938" icon="view" />
         </Button>
         

@@ -5,20 +5,21 @@ import { Button, Icon, Text, TextField } from "../components";
 import { colors, spacing } from "../theme";
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle";
 import { AppStackScreenProps } from "app/navigators";
+import { useNavigation } from "@react-navigation/native"
 
 const welcomeLogo = require("../../assets/images/FD-logo.jpg");
 
-interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
+interface WelcomeScreenProps extends AppStackScreenProps<"Historico"> {}
 
-export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen() {
+export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen() {
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"]);
  
   const { width: screenWidth, height: screenHeight } = useWindowDimensions();
   const buttonWidthPercentage = 0.25;
   const bottomBarHeightPercentage = 0.1; // Porcentagem da altura da tela para a barra inferior
-
+  const navigation = useNavigation()
+  
   function setInput(value: any) {
-    throw new Error("Function not implemented.");
   }
 
   const renderCard = (title: string, subtitle: string) => (
@@ -39,7 +40,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
         textStyle={$buttonTextStyle}
         pressedTextStyle={$buttonPressedTextStyle}
-        onPress={() => Alert.alert("uuii!")}
+        onPress={() => Alert.alert("teste!")}
       >
         <Icon color="#232938" icon="caretRight" />
       </Button>
@@ -88,42 +89,42 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
 
         </ScrollView>
       </View><View style={[$bottomBar, { height: screenHeight * bottomBarHeightPercentage }]}>
-        <Button
-          style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={$bottomBarButtonPressed}
-          textStyle={$bottomBarButtonText}
-          pressedTextStyle={$bottomBarButtonTextPressed}
-          onPress={() => Alert.alert("uuii!")}
-        >
-          <Icon color="#232938" icon="menu" />
-        </Button>
-        <Button
-          style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={$bottomBarButtonPressed}
-          textStyle={$bottomBarButtonText}
-          pressedTextStyle={$bottomBarButtonTextPressed}
-          onPress={() => Alert.alert("truco mareco!")}
-        >
-          <Icon color="#232938" icon="community" />
-        </Button>
-        <Button
-          style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={$bottomBarButtonPressed}
-          textStyle={$bottomBarButtonText}
-          pressedTextStyle={$bottomBarButtonTextPressed}
-          onPress={() => Alert.alert("cavalo!!")}
-        >
-          <Icon color="#232938" icon="components" />
-        </Button>
-        <Button
-          style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
-          pressedStyle={$bottomBarButtonPressed}
-          textStyle={$bottomBarButtonText}
-          pressedTextStyle={$bottomBarButtonTextPressed}
-          onPress={() => Alert.alert("que isso meu filho, calma!")}
-        >
-          <Icon color="#232938" icon="view" />
-        </Button>
+      <Button
+            style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
+            pressedStyle={$bottomBarButtonPressed}
+            textStyle={$bottomBarButtonText}
+            pressedTextStyle={$bottomBarButtonTextPressed}
+            onPress={() => navigation.navigate("Welcome")}
+          >
+            <Icon color="#232938" icon="menu" />
+          </Button>
+          <Button
+            style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
+            pressedStyle={$bottomBarButtonPressed}
+            textStyle={$bottomBarButtonText}
+            pressedTextStyle={$bottomBarButtonTextPressed}
+            onPress={() => navigation.navigate("Historico")}
+          >
+            <Icon color="#232938" icon="community" />
+          </Button>
+          <Button
+            style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
+            pressedStyle={$bottomBarButtonPressed}
+            textStyle={$bottomBarButtonText}
+            pressedTextStyle={$bottomBarButtonTextPressed}
+            onPress={() => navigation.navigate("Minhasorden")}
+          >
+            <Icon color="#232938" icon="components" />
+          </Button>
+          <Button
+            style={[$bottomBarButton, { width: screenWidth * buttonWidthPercentage }, { backgroundColor: "white" }, { borderColor: "white", borderRadius: 0 }]}
+            pressedStyle={$bottomBarButtonPressed}
+            textStyle={$bottomBarButtonText}
+            pressedTextStyle={$bottomBarButtonTextPressed}
+            onPress={() => navigation.navigate("Minhasorden")}
+          >
+            <Icon color="#232938" icon="view" />
+          </Button>
       </View></>
   
   );

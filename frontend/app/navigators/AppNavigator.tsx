@@ -32,9 +32,11 @@ import { colors } from "app/theme"
  *   https://reactnavigation.org/docs/typescript/#organizing-types
  */
 export type AppStackParamList = {
-  Welcome: undefined
-  // 🔥 Your screens go here
-  // IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
+  Login: { username: string , password: string}
+  Minhasorden: { username: string , password: string}
+  Welcome: { username: string , password: string}
+  Historico: { username: string , password: string}
+  OrdemServico: { username: string , password: string}
 }
 
 /**
@@ -54,9 +56,14 @@ const Stack = createNativeStackNavigator<AppStackParamList>()
 const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator
+    initialRouteName="Login"
       screenOptions={{ headerShown: false, navigationBarColor: colors.background }}
     >
+          <Stack.Screen name="Login" component={Screens.Login} />
+          <Stack.Screen name="Minhasorden" component={Screens.MinhasOrdens} />
           <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} />
+          <Stack.Screen name="Historico" component={Screens.Historico} />
+          <Stack.Screen name="OrdemServico" component={Screens.OrdemServico} />
       {/** 🔥 Your screens go here */}
       {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
     </Stack.Navigator>
@@ -81,3 +88,9 @@ export const AppNavigator = observer(function AppNavigator(props: NavigationProp
     </NavigationContainer>
   )
 })
+export function navigation({ navigation },a) {
+  return (
+         navigation.navigate(a)
+  );
+}
+
