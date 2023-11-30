@@ -80,7 +80,7 @@ export const Login: FC<WelcomeScreenProps> = observer(function WelcomeScreen() {
               <View>
                 <Text
                   style={{
-                    textAlign: 'center',
+                    marginTop: 4,
                     color: 'black',
                     fontWeight: 'bold',
                   }}
