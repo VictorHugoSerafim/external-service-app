@@ -103,7 +103,7 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
             pressedStyle={$bottomBarButtonPressed}
             textStyle={$bottomBarButtonText}
             pressedTextStyle={$bottomBarButtonTextPressed}
-            onPress={() => navigation.navigate("Historico")}
+            onPress={() => navigation.navigate("Minhasorden")}
           >
             <Icon color="#232938" icon="community" />
           </Button>
@@ -112,7 +112,7 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
             pressedStyle={$bottomBarButtonPressed}
             textStyle={$bottomBarButtonText}
             pressedTextStyle={$bottomBarButtonTextPressed}
-            onPress={() => navigation.navigate("Minhasorden")}
+            onPress={() => navigation.navigate("OrdemServico")}
           >
             <Icon color="#232938" icon="components" />
           </Button>
@@ -121,7 +121,7 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
             pressedStyle={$bottomBarButtonPressed}
             textStyle={$bottomBarButtonText}
             pressedTextStyle={$bottomBarButtonTextPressed}
-            onPress={() => navigation.navigate("Minhasorden")}
+            onPress={() => navigation.navigate("Historico")}
           >
             <Icon color="#232938" icon="view" />
           </Button>

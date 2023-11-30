@@ -247,7 +247,7 @@ export const MinhasOrdens: FC<WelcomeScreenProps> = observer(function WelcomeScr
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
           pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => navigation.navigate("Historico")}
+          onPress={() => navigation.navigate("Minhasorden")}
           >
           <Icon color="#232938" icon="community" />
         </Button>
@@ -256,7 +256,7 @@ export const MinhasOrdens: FC<WelcomeScreenProps> = observer(function WelcomeScr
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
           pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => navigation.navigate("Minhasorden")}
+          onPress={() => navigation.navigate("OrdemServico")}
           >
           <Icon color="#232938" icon="components" />
         </Button>
@@ -265,7 +265,7 @@ export const MinhasOrdens: FC<WelcomeScreenProps> = observer(function WelcomeScr
           pressedStyle={[{ backgroundColor: "lightgray" }, { borderRadius: 0 }]}
           textStyle={[{ fontSize: height * 0.03 }, { color: "black" }]}
           pressedTextStyle={[{ fontSize: height * 0.03 }, { color: "white" }]}
-          onPress={() => navigation.navigate("OrdemServico")}
+          onPress={() => navigation.navigate("Historico")}
           >
           <Icon color="#232938" icon="view" />
         </Button>
