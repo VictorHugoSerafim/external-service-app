@@ -32,6 +32,14 @@ import { useNavigation } from "@react-navigation/native"
 
 // const welcomeLogo = require("../../assets/images/FD-logo.jpg");
 const welcomeLogo = require("../../assets/images/barretech-logo.png");
+const donaNelzaLogo = require("../../assets/images/dona-nelza.png");
+const barretesaoLogo = require("../../assets/images/barretesao.png");
+const mariolLogo = require("../../assets/images/mariol.png");
+const minervaShopLogo = require("../../assets/images/minerva-shop.png");
+const minervaLogo = require("../../assets/images/minerva.png");
+const matutoLogo = require("../../assets/images/matuto.png");
+const penhaLogo = require("../../assets/images/escritorio-penha.png")
+const centralLogo = require("../../assets/images/escritorio-central.png")
 
 interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
 
@@ -88,9 +96,8 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
           </Button>
         </View>
 
-      <ScrollView>
+      {/* <ScrollView>
         <View style={[$bottomContainer, $bottomContainerInsets]}>
-          {/* Usando um loop para evitar repetição de código */}
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => (
             <View key={index} style={$rowContainer}>
               <TouchableWithoutFeedback>
@@ -115,6 +122,196 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
               </Button>
             </View>
           ))}
+        </View>
+      </ScrollView> */}
+
+      <ScrollView>
+        <View style={[$bottomContainer, $bottomContainerInsets]}>
+
+            <View style={$rowContainer}>
+              <TouchableWithoutFeedback>
+                <Image style={$card} source={donaNelzaLogo} resizeMode="contain" />
+              </TouchableWithoutFeedback>
+              <View style={$textContainer}>
+                <TouchableWithoutFeedback>
+                  <Text text={`Dona Nelza Alimentos`} preset="bold" style={$textStyle} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                  <Text text="R. 18, 2548 - Fortaleza" style={[$textStyle, { fontSize: 12 }]} />
+                </TouchableWithoutFeedback>
+              </View>
+              <Button
+                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
+                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
+                textStyle={$buttonTextStyle}
+                pressedTextStyle={$buttonPressedTextStyle}
+                onPress={() => navigation.navigate("OrdemServico")}
+              >
+                <Icon color="#232938" icon="caretRight" />
+              </Button>
+            </View>
+          
+            <View style={$rowContainer}>
+              <TouchableWithoutFeedback>
+                <Image style={$card} source={minervaShopLogo} resizeMode="contain" />
+              </TouchableWithoutFeedback>
+              <View style={$textContainer}>
+                <TouchableWithoutFeedback>
+                  <Text text={`Minerva Foods Shop`} preset="bold" style={$textStyle} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                  <Text text="Av. 43, 110 - Centro" style={[$textStyle, { fontSize: 12 }]} />
+                </TouchableWithoutFeedback>
+              </View>
+              <Button
+                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
+                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
+                textStyle={$buttonTextStyle}
+                pressedTextStyle={$buttonPressedTextStyle}
+                onPress={() => navigation.navigate("OrdemServico")}
+              >
+                <Icon color="#232938" icon="caretRight" />
+              </Button>
+            </View>
+
+            <View style={$rowContainer}>
+              <TouchableWithoutFeedback>
+                <Image style={$card} source={barretesaoLogo} resizeMode="contain" />
+              </TouchableWithoutFeedback>
+              <View style={$textContainer}>
+                <TouchableWithoutFeedback>
+                  <Text text={`Barretesão Loja 2`} preset="bold" style={$textStyle} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                  <Text text="Av. Antonio José Junqueira de Azevedo, 151 - Jardim Allah" style={[$textStyle, { fontSize: 12 }]} />
+                </TouchableWithoutFeedback>
+              </View>
+              <Button
+                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
+                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
+                textStyle={$buttonTextStyle}
+                pressedTextStyle={$buttonPressedTextStyle}
+                onPress={() => navigation.navigate("OrdemServico")}
+              >
+                <Icon color="#232938" icon="caretRight" />
+              </Button>
+            </View>
+            
+            <View style={$rowContainer}>
+              <TouchableWithoutFeedback>
+                <Image style={$card} source={mariolLogo} resizeMode="contain" />
+              </TouchableWithoutFeedback>
+              <View style={$textContainer}>
+                <TouchableWithoutFeedback>
+                  <Text text={`Mariol Embalagens`} preset="bold" style={$textStyle} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                  <Text text="Av. Mario de Oliveira, 505 - Distrito Industrial II" style={[$textStyle, { fontSize: 12 }]} />
+                </TouchableWithoutFeedback>
+              </View>
+              <Button
+                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
+                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
+                textStyle={$buttonTextStyle}
+                pressedTextStyle={$buttonPressedTextStyle}
+                onPress={() => navigation.navigate("OrdemServico")}
+              >
+                <Icon color="#232938" icon="caretRight" />
+              </Button>
+            </View>
+
+            <View style={$rowContainer}>
+              <TouchableWithoutFeedback>
+                <Image style={$card} source={minervaLogo} resizeMode="contain" />
+              </TouchableWithoutFeedback>
+              <View style={$textContainer}>
+                <TouchableWithoutFeedback>
+                  <Text text={`Minerva Foods`} preset="bold" style={$textStyle} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                  <Text text="Av. Antônio Manso Bernardes, S/N - Chácara Minerva" style={[$textStyle, { fontSize: 12 }]} />
+                </TouchableWithoutFeedback>
+              </View>
+              <Button
+                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
+                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
+                textStyle={$buttonTextStyle}
+                pressedTextStyle={$buttonPressedTextStyle}
+                onPress={() => navigation.navigate("OrdemServico")}
+              >
+                <Icon color="#232938" icon="caretRight" />
+              </Button>
+            </View>
+
+            <View style={$rowContainer}>
+              <TouchableWithoutFeedback>
+                <Image style={$card} source={matutoLogo} resizeMode="contain" />
+              </TouchableWithoutFeedback>
+              <View style={$textContainer}>
+                <TouchableWithoutFeedback>
+                  <Text text={`Supermercados Matuto`} preset="bold" style={$textStyle} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                  <Text text="Av. João Cavalini, 205 - Benedito Realino Corrêa" style={[$textStyle, { fontSize: 12 }]} />
+                </TouchableWithoutFeedback>
+              </View>
+              <Button
+                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
+                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
+                textStyle={$buttonTextStyle}
+                pressedTextStyle={$buttonPressedTextStyle}
+                onPress={() => navigation.navigate("OrdemServico")}
+              >
+                <Icon color="#232938" icon="caretRight" />
+              </Button>
+            </View>
+
+            <View style={$rowContainer}>
+              <TouchableWithoutFeedback>
+                <Image style={$card} source={penhaLogo} resizeMode="contain" />
+              </TouchableWithoutFeedback>
+              <View style={$textContainer}>
+                <TouchableWithoutFeedback>
+                  <Text text={`Escritório Penha`} preset="bold" style={$textStyle} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                  <Text text="R. Vinte e Dois, 252 - Centro" style={[$textStyle, { fontSize: 12 }]} />
+                </TouchableWithoutFeedback>
+              </View>
+              <Button
+                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
+                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
+                textStyle={$buttonTextStyle}
+                pressedTextStyle={$buttonPressedTextStyle}
+                onPress={() => navigation.navigate("OrdemServico")}
+              >
+                <Icon color="#232938" icon="caretRight" />
+              </Button>
+            </View>
+
+            <View style={$rowContainer}>
+              <TouchableWithoutFeedback>
+                <Image style={$card} source={centralLogo} resizeMode="contain" />
+              </TouchableWithoutFeedback>
+              <View style={$textContainer}>
+                <TouchableWithoutFeedback>
+                  <Text text={`Escritório Central`} preset="bold" style={$textStyle} />
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                  <Text text="Av. Vinte e Três, 937 - Centro" style={[$textStyle, { fontSize: 12 }]} />
+                </TouchableWithoutFeedback>
+              </View>
+              <Button
+                style={[$buttonStyle, { width: screenWidth * 0.15 }]}
+                pressedStyle={[$buttonPressedStyle, { width: screenWidth * 0.15 }]}
+                textStyle={$buttonTextStyle}
+                pressedTextStyle={$buttonPressedTextStyle}
+                onPress={() => navigation.navigate("OrdemServico")}
+              >
+                <Icon color="#232938" icon="caretRight" />
+              </Button>
+            </View>
+
         </View>
       </ScrollView>
 

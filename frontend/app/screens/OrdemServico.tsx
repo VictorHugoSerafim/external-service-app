@@ -171,7 +171,7 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
               <TextField
                 onChangeText={(value) => setNome(value)}
                 LabelTextProps={{ style: { color: "black" } }}
-                placeholder=""
+                placeholder="40169"
                 style={{ backgroundColor: "white" }}
                 containerStyle={[{ backgroundColor: "transparent" }]}
                 inputWrapperStyle={{ backgroundColor: "white" }}
@@ -183,7 +183,7 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
               <TextField
                 onChangeText={(value) => setCPF(value)}
                 LabelTextProps={{ style: { color: "black" } }}
-                placeholder=""
+                placeholder="Rede"
                 style={{ backgroundColor: "white" }}
                 containerStyle={[{ backgroundColor: "transparent" }]}
                 inputWrapperStyle={{ backgroundColor: "white" }}
@@ -199,7 +199,7 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
               <TextField
                 onChangeText={(value) => setNome(value)}
                 LabelTextProps={{ style: { color: "black" } }}
-                placeholder=""
+                placeholder="Dona Nelza"
                 style={{ backgroundColor: "white" }}
                 containerStyle={[{ backgroundColor: "transparent" }]}
                 inputWrapperStyle={{ backgroundColor: "white" }}
@@ -211,8 +211,8 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
               <TextField
                 onChangeText={(value) => setCPF(value)}
                 LabelTextProps={{ style: { color: "black" } }}
-                placeholder=""
-                style={{ backgroundColor: "white" }}
+                placeholder="06.842.257/0001-77"
+                style={{ backgroundColor: "white", fontSize: 14 }}
                 containerStyle={[{ backgroundColor: "transparent" }]}
                 inputWrapperStyle={{ backgroundColor: "white" }}
               />
@@ -224,7 +224,7 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
           <TextField
             onChangeText={(value) => setInput(value)}
             LabelTextProps={{ style: { color: "black" } }}
-            placeholder=""
+            placeholder="R. 18, 2548 - Fortaleza"
             style={{ backgroundColor: "white" }}
             containerStyle={[{ backgroundColor: "transparent" }]}
             inputWrapperStyle={{ backgroundColor: "white" }}
@@ -247,7 +247,7 @@ export const OrdemServico: FC<WelcomeScreenProps> = observer(function WelcomeScr
           <TextField
             onChangeText={(value) => setEndereco(value)}
             LabelTextProps={{ style: { color: "black" } }}
-            placeholder=""
+            placeholder="Ir verificar a rede, e configurar um roteador"
             multiline={true}
             style={{ backgroundColor: "white" }}
             containerStyle={[{ backgroundColor: "transparent" }]}

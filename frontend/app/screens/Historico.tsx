@@ -9,6 +9,14 @@ import { useNavigation } from "@react-navigation/native"
 
 // const welcomeLogo = require("../../assets/images/FD-logo.jpg");
 const welcomeLogo = require("../../assets/images/barretech-logo.png");
+const donaNelzaLogo = require("../../assets/images/dona-nelza.png");
+const barretesaoLogo = require("../../assets/images/barretesao.png");
+const mariolLogo = require("../../assets/images/mariol.png");
+const minervaShopLogo = require("../../assets/images/minerva-shop.png");
+const minervaLogo = require("../../assets/images/minerva.png");
+const matutoLogo = require("../../assets/images/matuto.png");
+const penhaLogo = require("../../assets/images/escritorio-penha.png")
+const centralLogo = require("../../assets/images/escritorio-central.png")
 
 interface WelcomeScreenProps extends AppStackScreenProps<"Historico"> {}
 
@@ -116,18 +124,18 @@ export const Historico: FC<WelcomeScreenProps> = observer(function WelcomeScreen
             )} />
         </View>
         <ScrollView style={[$bottomContainer, $bottomContainerInsets]}>
-          {renderCard("Chamado 1", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 2", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 3", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 4", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 5", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 6", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 7", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 8", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 9", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 10", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 11", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
-          {renderCard("Chamado 12", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 1", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 2", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 3", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 4", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 5", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 6", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 7", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 8", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 9", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 10", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 11", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
+          {renderCard("Chamado Finalizado 12", "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")}
 
         </ScrollView>
       </View>
